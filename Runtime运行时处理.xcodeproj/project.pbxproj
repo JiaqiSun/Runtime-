@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0480B76C1AB4088E00960B0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B76B1AB4088E00960B0D /* main.m */; };
-		0480B76F1AB4088E00960B0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B76E1AB4088E00960B0D /* AppDelegate.m */; };
-		0480B7721AB4088E00960B0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7711AB4088E00960B0D /* ViewController.m */; };
 		0480B7751AB4088E00960B0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0480B7731AB4088E00960B0D /* Main.storyboard */; };
 		0480B7771AB4088E00960B0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0480B7761AB4088E00960B0D /* Images.xcassets */; };
 		0480B77A1AB4088E00960B0D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0480B7781AB4088E00960B0D /* LaunchScreen.xib */; };
 		0480B7861AB4088F00960B0D /* Runtime_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7851AB4088F00960B0D /* Runtime_____Tests.m */; };
+		0480B7A31AB4096500960B0D /* NSObject+JQRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7931AB4096500960B0D /* NSObject+JQRuntime.m */; };
+		0480B7A41AB4096500960B0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7961AB4096500960B0D /* ViewController.m */; };
+		0480B7A51AB4096500960B0D /* Bone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7991AB4096500960B0D /* Bone.m */; };
+		0480B7A61AB4096500960B0D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B79B1AB4096500960B0D /* Book.m */; };
+		0480B7A71AB4096500960B0D /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B79D1AB4096500960B0D /* Dog.m */; };
+		0480B7A81AB4096500960B0D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B79F1AB4096500960B0D /* Person.m */; };
+		0480B7A91AB4096500960B0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7A21AB4096500960B0D /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +35,27 @@
 		0480B7661AB4088E00960B0D /* Runtime运行时处理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Runtime运行时处理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0480B76A1AB4088E00960B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0480B76B1AB4088E00960B0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0480B76D1AB4088E00960B0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0480B76E1AB4088E00960B0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0480B7701AB4088E00960B0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0480B7711AB4088E00960B0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0480B7741AB4088E00960B0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0480B7761AB4088E00960B0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0480B7791AB4088E00960B0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0480B77F1AB4088F00960B0D /* Runtime运行时处理Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Runtime运行时处理Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0480B7841AB4088F00960B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0480B7851AB4088F00960B0D /* Runtime_____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Runtime_____Tests.m"; sourceTree = "<group>"; };
+		0480B7911AB4096500960B0D /* JQCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQCoding.h; sourceTree = "<group>"; };
+		0480B7921AB4096500960B0D /* NSObject+JQRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JQRuntime.h"; sourceTree = "<group>"; };
+		0480B7931AB4096500960B0D /* NSObject+JQRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JQRuntime.m"; sourceTree = "<group>"; };
+		0480B7951AB4096500960B0D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0480B7961AB4096500960B0D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0480B7981AB4096500960B0D /* Bone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bone.h; sourceTree = "<group>"; };
+		0480B7991AB4096500960B0D /* Bone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bone.m; sourceTree = "<group>"; };
+		0480B79A1AB4096500960B0D /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		0480B79B1AB4096500960B0D /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		0480B79C1AB4096500960B0D /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		0480B79D1AB4096500960B0D /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		0480B79E1AB4096500960B0D /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		0480B79F1AB4096500960B0D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		0480B7A11AB4096500960B0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0480B7A21AB4096500960B0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +97,7 @@
 		0480B7681AB4088E00960B0D /* Runtime运行时处理 */ = {
 			isa = PBXGroup;
 			children = (
-				0480B76D1AB4088E00960B0D /* AppDelegate.h */,
-				0480B76E1AB4088E00960B0D /* AppDelegate.m */,
-				0480B7701AB4088E00960B0D /* ViewController.h */,
-				0480B7711AB4088E00960B0D /* ViewController.m */,
-				0480B7731AB4088E00960B0D /* Main.storyboard */,
-				0480B7761AB4088E00960B0D /* Images.xcassets */,
-				0480B7781AB4088E00960B0D /* LaunchScreen.xib */,
+				0480B78F1AB4096400960B0D /* Class */,
 				0480B7691AB4088E00960B0D /* Supporting Files */,
 			);
 			path = "Runtime运行时处理";
@@ -96,6 +106,9 @@
 		0480B7691AB4088E00960B0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0480B7731AB4088E00960B0D /* Main.storyboard */,
+				0480B7761AB4088E00960B0D /* Images.xcassets */,
+				0480B7781AB4088E00960B0D /* LaunchScreen.xib */,
 				0480B76A1AB4088E00960B0D /* Info.plist */,
 				0480B76B1AB4088E00960B0D /* main.m */,
 			);
@@ -117,6 +130,60 @@
 				0480B7841AB4088F00960B0D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0480B78F1AB4096400960B0D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				0480B7901AB4096400960B0D /* Catogray */,
+				0480B7941AB4096500960B0D /* Controller */,
+				0480B7971AB4096500960B0D /* Model */,
+				0480B7A01AB4096500960B0D /* Other */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		0480B7901AB4096400960B0D /* Catogray */ = {
+			isa = PBXGroup;
+			children = (
+				0480B7911AB4096500960B0D /* JQCoding.h */,
+				0480B7921AB4096500960B0D /* NSObject+JQRuntime.h */,
+				0480B7931AB4096500960B0D /* NSObject+JQRuntime.m */,
+			);
+			path = Catogray;
+			sourceTree = "<group>";
+		};
+		0480B7941AB4096500960B0D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0480B7951AB4096500960B0D /* ViewController.h */,
+				0480B7961AB4096500960B0D /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0480B7971AB4096500960B0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0480B7981AB4096500960B0D /* Bone.h */,
+				0480B7991AB4096500960B0D /* Bone.m */,
+				0480B79A1AB4096500960B0D /* Book.h */,
+				0480B79B1AB4096500960B0D /* Book.m */,
+				0480B79C1AB4096500960B0D /* Dog.h */,
+				0480B79D1AB4096500960B0D /* Dog.m */,
+				0480B79E1AB4096500960B0D /* Person.h */,
+				0480B79F1AB4096500960B0D /* Person.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0480B7A01AB4096500960B0D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0480B7A11AB4096500960B0D /* AppDelegate.h */,
+				0480B7A21AB4096500960B0D /* AppDelegate.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0480B7721AB4088E00960B0D /* ViewController.m in Sources */,
-				0480B76F1AB4088E00960B0D /* AppDelegate.m in Sources */,
+				0480B7A71AB4096500960B0D /* Dog.m in Sources */,
+				0480B7A61AB4096500960B0D /* Book.m in Sources */,
+				0480B7A81AB4096500960B0D /* Person.m in Sources */,
+				0480B7A41AB4096500960B0D /* ViewController.m in Sources */,
+				0480B7A91AB4096500960B0D /* AppDelegate.m in Sources */,
+				0480B7A51AB4096500960B0D /* Bone.m in Sources */,
 				0480B76C1AB4088E00960B0D /* main.m in Sources */,
+				0480B7A31AB4096500960B0D /* NSObject+JQRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

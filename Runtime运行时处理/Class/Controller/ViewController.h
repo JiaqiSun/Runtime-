@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  Runtime运行时处理
+//  自动字典转模型
 //
-//  Created by mac on 15-3-14.
+//  Created by mac on 15-3-13.
 //  Copyright (c) 2015年 mac. All rights reserved.
 //
 
