@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self dictToModal];
+    [self arrayToModel];
 }
 -(void)coding{
 
@@ -66,7 +66,7 @@
                             };
     
     NSDictionary *dict2 = @{
-                            @"name" : @"jack",
+                            @"name" : @"ROOl",
                             @"age" : @20,
                             @"height" : @"1.55",
                             @"dog" : @{
@@ -178,7 +178,8 @@
                             };
     
     NSArray *arr = @[dict1,dict2,dict3,dict4,dict5];
-    NSArray *persons = [NSArray objectWithArray:arr class:[Person class]];
+//    NSArray *persons = [NSArray objectWithArray:arr class:[Person class]];
+    NSArray *persons = [Person objectArrayWithArray:arr];
     [persons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSLog(@"-----------");
         NSLog(@"%@",obj);
@@ -198,11 +199,16 @@
                         @"price" : @14.6,
                         @"publisher" : @"北京大学出版社"
                         }];
-    NSArray *b = [NSArray objectWithArray:arr className:@"Book"] ;
+    
+    // 已过时
+//    NSArray *b = [NSArray objectWithArray:arr className:@"Book"] ;
+    
+    NSArray *b = [Person objectArrayWithArray:arr];
+
     [b enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSLog(@"%@",obj);
     }];
-    
+   
     
     
 }
@@ -235,11 +241,11 @@
     
                                 @"money" : @"100"
                                };
-//        Person *p =[Person objectWithDictionary:dict];
+        Person *p =[Person objectWithDictionary:dict];
 //
-//    [NSKeyedArchiver archiveRootObject:p toFile:@"/Users/mac/Desktop/dog.hm"];
+    [NSKeyedArchiver archiveRootObject:p toFile:@"/Users/mac/Desktop/dog.hm"];
     
-    Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:@"/Users/mac/Desktop/dog.hm"];
+//    Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:@"/Users/mac/Desktop/dog.hm"];
     NSLog(@"%@",p);
     
 //    NSLog(@"%@",p);

@@ -128,6 +128,16 @@
     return [arrayM copy];
 }
 
++(NSArray *)objectArrayWithArray:(NSArray *)array {
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        id objc = [[self alloc] init];
+        [objc setDict:dict];
+        [arrayM addObject:objc];
+    }
+    return [arrayM copy];
+}
+
 #pragma mark - 解档 和 归档 
 #pragma mark 解档
 /**

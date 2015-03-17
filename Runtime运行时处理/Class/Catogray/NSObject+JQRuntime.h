@@ -30,9 +30,9 @@
  *
  *  @return 模型数组
  */
-+(NSArray *)objectWithArray:(NSArray *)array className:(NSString *)className;
-+(NSArray *)objectWithArray:(NSArray *)array class:(Class)class;
-
++(NSArray *)objectWithArray:(NSArray *)array className:(NSString *)className  NS_DEPRECATED_IOS( 2_0, 2_0) ;
++(NSArray *)objectWithArray:(NSArray *)array class:(Class)class  NS_DEPRECATED_IOS(2_0, 2_0);
++(NSArray *)objectArrayWithArray:(NSArray *)array;
 
 #pragma mark - 归档和解档处理 
 /*
