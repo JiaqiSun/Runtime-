@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "JQCoding.h"
 @class Dog;
 @interface Person : NSObject
@@ -15,6 +16,8 @@
 @property (nonatomic,assign) float height;
 @property (nonatomic, strong) Dog  *dog;
 @property (nonatomic, strong) NSArray *books;
-
+@property (nonatomic, strong)  UIImage *image;
+//@property (nonatomic, strong) NSValue *value;
+//@property (nonatomic, assign) NSInteger aa;
 
 @end

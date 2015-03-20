@@ -13,6 +13,7 @@
 #import "Bone.h"
 #import "Book.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
 
 @end
 
@@ -20,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self arrayToModel];
+    [self dictArrayToModelArray];
 }
 -(void)coding{
 
@@ -41,6 +42,7 @@
                             @"name" : @"jack",
                             @"age" : @20,
                             @"height" : @"1.55",
+                            @"image":@"0.png",
                             @"dog" : @{
                                     @"name" : @"wangcai",
                                     @"price" : @"100",
@@ -184,7 +186,8 @@
         NSLog(@"-----------");
         NSLog(@"%@",obj);
     }];
-    
+    Person *p = persons.firstObject;
+    self.iconView.image = p.image;
 
 }
 -(void)arrayToModel{

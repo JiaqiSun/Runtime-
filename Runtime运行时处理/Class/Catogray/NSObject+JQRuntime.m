@@ -8,6 +8,8 @@
 
 #import "NSObject+JQRuntime.h"
 #import <objc/runtime.h>
+#import <UIKit/UIKit.h>
+
 @implementation NSObject (JQRuntime)
 
 
@@ -47,33 +49,42 @@
             if (!value) continue;
             
             NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
-//            NSLog(@"%@",type);
+
             NSRange range = [type rangeOfString:@"@"];
             if (range.location != NSNotFound) {
                 type = [type substringWithRange:NSMakeRange(2,type.length - 3)];
                 
+                
+                // 不是NS开头的类或者对象
                 if (![type hasPrefix:@"NS"]) {
                     
-                    Class class = NSClassFromString(type);
+                    // 如果是 UIImage
+                    if([type isEqualToString:@"UIImage"]){
+                        value = [UIImage imageNamed:value];
                     
-                    // 获取Dictionary 所对应的类 并将该类赋值给value 在setValue时,将Dog所对应的类赋值给Person
-                    // 然后再给模型的模型赋值
-                    value = [class objectWithDictionary:value];
-//                    NSLog(@"value ---%@",value);
+                    // 如果是其他自定义类
+                    }else{
+                        Class class = NSClassFromString(type);
+                        // 获取Dictionary 所对应的类 并将该类赋值给value 在setValue时,将Dog所对应的类赋值给Person
+                        // 然后再给模型的模型赋值
+                        value = [class objectWithDictionary:value];
+                    }
+
+                // 如果是NS开头的 数组
                 }else if([type isEqual:@"NSArray"]){
                    
                     NSArray *arr = (NSArray *)value;
                     value = [NSMutableArray array];
                      NSString *className = [key substringWithRange:NSMakeRange(0, key.length -1)];
-                    for (NSDictionary *dict in arr) {
-                       
+
+                    [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                         Class class = NSClassFromString([className capitalizedString]);
-                        [value addObject: [class objectWithDictionary:dict]];
-                        
-                    }
+                        [value addObject: [class objectWithDictionary:obj]];
+                    }];
                 }
             }
-//            NSLog(@"%@ %@",key,value);
+
+            
             [self setValue:value forKeyPath:key];
         
         }
