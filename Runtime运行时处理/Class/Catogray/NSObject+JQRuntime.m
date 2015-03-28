@@ -37,19 +37,27 @@
     while (c && c !=[NSObject class]  ) {
 
         unsigned int outCount = 0;
-        Ivar *ivars = class_copyIvarList(c, &outCount);
+        
+//        Ivar *ivars = class_copyIvarList(c, &outCount);
+        objc_property_t  *propertys = class_copyPropertyList(c, &outCount);
         for (int i =0 ; i<outCount; i++) {
-            Ivar ivar = ivars[i];
             
+//            Ivar ivar = ivars[i];
+                objc_property_t property = propertys[i];
             // 此时获取的key 是带 _的 所以 要把 _去掉
-            NSString *key = [NSString stringWithUTF8String:ivar_getName(ivar)];
-            key = [key substringFromIndex:1];
+//            NSString *key = [NSString stringWithUTF8String:ivar_getName(ivar)];
+            
+//            key = [key substringFromIndex:1];
+            NSString *key = [NSString stringWithUTF8String:property_getName(property)];
             
             id value = dict[key];
             if (!value) continue;
             
-            NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
-
+//            NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
+            
+            char *t = property_copyAttributeValue(property,"T");
+            NSString *type = [NSString stringWithUTF8String:t];
+            NSLog(@"%@",type);
             NSRange range = [type rangeOfString:@"@"];
             if (range.location != NSNotFound) {
                 type = [type substringWithRange:NSMakeRange(2,type.length - 3)];
@@ -86,9 +94,10 @@
 
             
             [self setValue:value forKeyPath:key];
-        
+            free(t);
         }
-        free(ivars);
+        free(propertys);
+//        free(ivars);
         c = [c superclass];
     }
     

@@ -13,7 +13,7 @@
 @interface Person : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic,assign) int age;
-@property (nonatomic,assign) float height;
+@property (nonatomic,assign) NSNumber *height;
 @property (nonatomic, strong) Dog  *dog;
 @property (nonatomic, strong) NSArray *books;
 @property (nonatomic, strong)  UIImage *image;
