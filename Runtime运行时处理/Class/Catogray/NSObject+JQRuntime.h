@@ -10,6 +10,31 @@
 
 @interface NSObject (Extasion)
 
+
+
+#pragma mark - 扩展的属性 对象中 属性的个数 名称 类型
+// eg: Person : NSArray *name;
+
+/**
+ *  对象中所有属性的个数 1
+ */
+@property (nonatomic,assign,readonly) unsigned int propertyCount;
+/**
+ *  对象中所有属性的名称 name
+ */
+@property (nonatomic, strong,readonly) NSArray *objectPropertyKeys;
+/**
+ *  对象中所有属性的类型 type
+ */
+@property (nonatomic, strong,readonly) NSArray *objectPropertyTypes;
+
+
+#pragma mark - 扩展的方法  类中属性的个数 名称 类型
++(NSArray *)objectPropertyKeys;
++(NSArray *)objectPropertyTypes;
++(unsigned int)propertyCount;
+
+
 #pragma mark - 字典转换成模型
 /*
  *  使用规则:

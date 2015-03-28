@@ -13,9 +13,65 @@
 @implementation NSObject (JQRuntime)
 
 
+#pragma mark - 扩展的方法  类中属性的个数 名称 类型
++(NSArray *)objectPropertyKeys{
+    NSMutableArray *arr = [NSMutableArray array];
+    unsigned int outCount = 0;
+    objc_property_t  *propertys = class_copyPropertyList(self, &outCount);
+    
+    for (int i =0 ; i<outCount; i++) {
+        objc_property_t property = propertys[i];
+        NSString *key = [NSString stringWithUTF8String:property_getName(property)];
+        [arr addObject:key];
+    }
+    free(propertys);
+    return  [arr copy];
+}
++(NSArray *)objectPropertyTypes{
+    NSMutableArray *arr = [NSMutableArray array];
+    unsigned int outCount = 0;
+    objc_property_t  *propertys = class_copyPropertyList(self, &outCount);
+    
+    for (int i =0 ; i<outCount; i++) {
+        objc_property_t property = propertys[i];
+        
+        char *t = property_copyAttributeValue(property,"T");
+        NSString *type = [NSString stringWithUTF8String:t];
+        
+        NSRange range = [type rangeOfString:@"@"];
+        if (range.location != NSNotFound) {
+            type = [type substringWithRange:NSMakeRange(2,type.length - 3)];
+        }
+        [arr addObject:type];
+        free(t);
+    }
+    return  [arr copy];
+    
+}
++(unsigned int)propertyCount{
+    unsigned int outCount = 0;
+    class_copyPropertyList(self, &outCount);
+    
+    return outCount;
+}
+
+#pragma mark - 扩展的属性 对象中 属性的个数 名称 类型
+-(unsigned int)propertyCount{
+    return [[self class] propertyCount];
+}
+
+-(NSArray *)objectPropertyTypes{
+    return [[self class] objectPropertyTypes];
+}
+
+-(NSArray *)objectPropertyKeys{
+    return [[self class] objectPropertyKeys];
+}
+
+
+
 
 #pragma mark - 字典转换成模型
-
 /*
  *  使用规则:
  *  在字典中存在数组的情况下,数组名称的命名 必须以 对象名+s 为标准 否则会报错
@@ -38,26 +94,20 @@
 
         unsigned int outCount = 0;
         
-//        Ivar *ivars = class_copyIvarList(c, &outCount);
         objc_property_t  *propertys = class_copyPropertyList(c, &outCount);
         for (int i =0 ; i<outCount; i++) {
             
-//            Ivar ivar = ivars[i];
                 objc_property_t property = propertys[i];
             // 此时获取的key 是带 _的 所以 要把 _去掉
-//            NSString *key = [NSString stringWithUTF8String:ivar_getName(ivar)];
-            
-//            key = [key substringFromIndex:1];
+
             NSString *key = [NSString stringWithUTF8String:property_getName(property)];
             
             id value = dict[key];
             if (!value) continue;
             
-//            NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
-            
             char *t = property_copyAttributeValue(property,"T");
             NSString *type = [NSString stringWithUTF8String:t];
-            NSLog(@"%@",type);
+
             NSRange range = [type rangeOfString:@"@"];
             if (range.location != NSNotFound) {
                 type = [type substringWithRange:NSMakeRange(2,type.length - 3)];
@@ -97,7 +147,6 @@
             free(t);
         }
         free(propertys);
-//        free(ivars);
         c = [c superclass];
     }
     

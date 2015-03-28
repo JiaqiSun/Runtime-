@@ -19,6 +19,7 @@
 		0480B7A71AB4096500960B0D /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B79D1AB4096500960B0D /* Dog.m */; };
 		0480B7A81AB4096500960B0D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B79F1AB4096500960B0D /* Person.m */; };
 		0480B7A91AB4096500960B0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480B7A21AB4096500960B0D /* AppDelegate.m */; };
+		04E0E6281AC6B56C003162F7 /* NSArray+JQLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0E6271AC6B56C003162F7 /* NSArray+JQLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		0480B79F1AB4096500960B0D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		0480B7A11AB4096500960B0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0480B7A21AB4096500960B0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04E0E6261AC6B56C003162F7 /* NSArray+JQLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JQLog.h"; sourceTree = "<group>"; };
+		04E0E6271AC6B56C003162F7 /* NSArray+JQLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JQLog.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 		0480B7901AB4096400960B0D /* Catogray */ = {
 			isa = PBXGroup;
 			children = (
+				04E0E6261AC6B56C003162F7 /* NSArray+JQLog.h */,
+				04E0E6271AC6B56C003162F7 /* NSArray+JQLog.m */,
 				0480B7911AB4096500960B0D /* JQCoding.h */,
 				0480B7921AB4096500960B0D /* NSObject+JQRuntime.h */,
 				0480B7931AB4096500960B0D /* NSObject+JQRuntime.m */,
@@ -292,6 +297,7 @@
 				0480B7A41AB4096500960B0D /* ViewController.m in Sources */,
 				0480B7A91AB4096500960B0D /* AppDelegate.m in Sources */,
 				0480B7A51AB4096500960B0D /* Bone.m in Sources */,
+				04E0E6281AC6B56C003162F7 /* NSArray+JQLog.m in Sources */,
 				0480B76C1AB4088E00960B0D /* main.m in Sources */,
 				0480B7A31AB4096500960B0D /* NSObject+JQRuntime.m in Sources */,
 			);
@@ -486,6 +492,7 @@
 				0480B78B1AB4088F00960B0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0480B78C1AB4088F00960B0D /* Build configuration list for PBXNativeTarget "Runtime运行时处理Tests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +501,7 @@
 				0480B78E1AB4088F00960B0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

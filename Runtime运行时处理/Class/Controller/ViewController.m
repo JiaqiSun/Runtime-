@@ -188,7 +188,13 @@
     }];
     Person *p = persons.firstObject;
     self.iconView.image = p.image;
-
+        NSLog(@"%@", [Person objectPropertyKeys]);
+         NSLog(@"%@", [Person objectPropertyTypes]);
+        NSLog(@"%d",[Person propertyCount]);
+        NSLog(@"%d",Person.propertyCount);
+    NSLog(@"%d",p.propertyCount);
+    NSLog(@"%@",p.objectPropertyKeys);
+    NSLog(@"%@",p.objectPropertyTypes);
 }
 -(void)arrayToModel{
     NSArray *arr =@[
