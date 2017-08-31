@@ -23,6 +23,7 @@
     [super viewDidLoad];
     [self dictArrayToModelArray];
     NSLog(@"-----");
+    NSLog(@"-----");
 }
 -(void)coding{
 
