@@ -24,6 +24,8 @@
     [self dictArrayToModelArray];
     NSLog(@"-----");
     NSLog(@"-----");
+    NSLog(@"-----");
+    NSLog(@"-----");
 }
 -(void)coding{
 
